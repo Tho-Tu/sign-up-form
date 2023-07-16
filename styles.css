@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  src: url("./fonts/poppins-regular-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 300;
+  src: url("./fonts/poppins-light-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 900;
+  src: url("./fonts/poppins-black-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 700;
+  src: url("./fonts/poppins-bolditalic-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  src: url("./fonts/poppins-italic-webfont.woff2") format("woff2");
+}
+
+* {
+  box-sizing: border-box;
+  /* border: solid red; */
+}
+
+body {
+  font-family: Poppins, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.left-content {
+  background-image: url(./images/Meyers_b3_s0084a.jpg);
+  background-color: #cccccc;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(0.5px);
+  height: 100vh;
+  border-right: solid 0.2px black;
+  flex: 1;
+  position: relative;
+}
+
+.image-sidebar {
+  background-color: black;
+  color: white;
+  opacity: 0.4;
+  position: absolute;
+  width: 100%;
+  top: 33vh;
+}
+
+.right-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 3rem;
+}
+
+.instructions {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  text-align: center;
+}
+
+.sign-up {
+  flex: 1;
+}
+
+.create-account {
+  flex: 1.2;
+}
