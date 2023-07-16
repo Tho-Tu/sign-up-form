@@ -1,5 +1,6 @@
 :root {
-  --font-title-size: clamp(1.5rem, 2vw, 2.5rem);
+  --font-title-size: clamp(1rem, 2vw, 2rem);
+  --font-regular-size: clamp(0.8rem, 1.5vw, 1.5rem);
 }
 
 @font-face {
@@ -58,7 +59,6 @@ textarea {
   width: 150px;
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
 
 .left-content {
@@ -110,13 +110,13 @@ textarea {
 }
 
 .instructions {
-  flex: 1.4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex: 1.2;
   font-size: var(--font-title-size);
-  text-align: center;
-  padding: 0 3rem;
+  padding: 0 3rem 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 900px;
 }
 
 .sign-up {
@@ -128,7 +128,7 @@ textarea {
 
 .create-account {
   flex: 1;
-  padding: 2rem 3rem;
+  padding: 2rem 3rem 0;
 }
 
 @media (max-width: 1100px) {
@@ -145,6 +145,6 @@ textarea {
     position: static;
   }
   .instructions {
-    padding: 2rem 3rem;
+    width: 100%;
   }
 }
