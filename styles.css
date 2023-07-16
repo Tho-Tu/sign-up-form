@@ -1,3 +1,7 @@
+:root {
+  --font-title-size: clamp(1.5rem, 2vw, 2.5rem);
+}
+
 @font-face {
   font-family: "Poppins";
   font-weight: 400;
@@ -45,9 +49,21 @@ body {
   background-color: rgb(250, 250, 250);
 }
 
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  width: 150px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .left-content {
   background-image: url(./images/Meyers_b3_s0084a.jpg);
-  background-color: #cccccc;
+  background-color: #e6e6e6;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -60,20 +76,19 @@ body {
 
 .image-sidebar {
   background-color: black;
-  opacity: 0.6;
+  opacity: 0.7;
   position: absolute;
   width: 100%;
   height: 150px;
   top: 25vh;
   display: flex;
   justify-content: center;
-  gap: 1rem;
   color: white;
   padding: 1.5rem;
 }
 
 .logo-image {
-  width: 20%;
+  width: 120px;
   height: 100%;
   z-index: 1;
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(270deg)
@@ -95,31 +110,41 @@ body {
 }
 
 .instructions {
-  flex: 1.2;
+  flex: 1.4;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-size: var(--font-title-size);
   text-align: center;
-  padding: 1rem;
+  padding: 0 3rem;
 }
 
 .sign-up {
   flex: 1;
   background-color: white;
-  padding: 3rem;
+  padding: 1rem 3rem;
+  box-shadow: -1px 3px 8px #bdbdbd;
 }
 
 .create-account {
-  flex: 1.2;
+  flex: 1;
   padding: 2rem 3rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
   body {
     flex-direction: column;
+    min-width: 320px;
   }
   .left-content {
     height: 20vh;
+    background-position: 20% 20%;
+    position: static;
+  }
+  .image-sidebar {
+    position: static;
+  }
+  .instructions {
+    padding: 2rem 3rem;
   }
 }
