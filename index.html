@@ -21,15 +21,22 @@
       </div>
       <div class="sign-up">
         <h2>Let's do this!</h2>
-        <form id="myform" action="" method="">
+        <form
+          id="myform"
+          action=""
+          method=""
+          onSubmit="return checkPassword(this)"
+        >
           <ul>
             <li>
               <label for="first-name">FIRST NAME</label>
               <input type="text" name="first-name" id="first-name" required />
+              <span></span>
             </li>
             <li>
               <label for="last-name">LAST NAME</label>
               <input type="text" name="last-name" id="last-name" required />
+              <span></span>
             </li>
           </ul>
           <ul>
@@ -41,7 +48,7 @@
                 name="email"
                 placeholder="email@email.com"
                 required
-              />
+              /><span></span>
             </li>
             <li>
               <label for="phone">PHONE NUMBER</label>
@@ -49,24 +56,34 @@
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="(area code) XXX XXX XXX"
-                required
-              />
+                placeholder="1234 567 890"
+                pattern="[0-9]{10}"
+                maxlength="10"
+              /><span></span>
             </li>
           </ul>
           <ul>
             <li>
-              <label for="password">PASSWORD</label>
-              <input type="password" name="password" id="password" required />
-            </li>
-            <li>
-              <label for="confirm-password">CONFIRM PASSWORD</label>
+              <label for="passwordOne">PASSWORD</label>
               <input
                 type="password"
-                name="confirm-password"
-                id="confirm-password"
+                name="passwordOne"
+                id="passwordOne"
+                minlength="8"
                 required
               />
+              <span>*Requires at least 8 characters</span>
+            </li>
+            <li>
+              <label for="passwordTwo">CONFIRM PASSWORD</label>
+              <input
+                type="password"
+                name="passwordTwo"
+                id="passwordTwo"
+                minlength="8"
+                required
+              />
+              <span id="passwordError"></span>
             </li>
           </ul>
         </form>
@@ -78,5 +95,32 @@
         <div>Already have an account? <a href="./index.html">Log In</a></div>
       </div>
     </div>
+    <script>
+      const passwordOneInput = document.querySelector("#passwordOne");
+      const passwordTwoInput = document.querySelector("#passwordTwo");
+      const passwordError = document.querySelector("#passwordError");
+
+      passwordTwoInput.addEventListener("input", () => {
+        if (passwordOne.value !== passwordTwo.value) {
+          passwordError.textContent = "Passwords do not match";
+          passwordTwoInput.setCustomValidity("Passwords do not match");
+          passwordTwoInput.classList.add("invalid-input");
+        } else {
+          passwordError.textContent = "";
+          passwordTwoInput.setCustomValidity("");
+          passwordTwoInput.classList.remove("invalid-input");
+        }
+      });
+
+      // This is more for style so that invalid style does not
+      // show up when page is loaded
+      passwordOneInput.addEventListener("input", () => {
+        if (passwordOne.value.length < 8) {
+          passwordOneInput.classList.add("invalid-input");
+        } else {
+          passwordOneInput.classList.remove("invalid-input");
+        }
+      });
+    </script>
   </body>
 </html>
