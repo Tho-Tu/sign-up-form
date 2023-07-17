@@ -16,38 +16,48 @@
     <div class="right-content">
       <div class="instructions">
         This is not a real online service! You know you need something like this
-        in your life to help you realize your deepest dreams.
-        <p>Sign up now to get started.</p>
+        in your life to help you realize your deepest dreams. <br />
+        <p>Sign up <em>now</em> to get started.</p>
       </div>
       <div class="sign-up">
         <h2>Let's do this!</h2>
-        <form action="">
+        <form id="myform" action="" method="">
           <ul>
             <li>
               <label for="first-name">FIRST NAME</label>
-              <input type="text" name="first-name" id="first-name" />
+              <input type="text" name="first-name" id="first-name" required />
             </li>
             <li>
               <label for="last-name">LAST NAME</label>
-              <input type="text" name="last-name" id="last-name" />
+              <input type="text" name="last-name" id="last-name" required />
             </li>
           </ul>
-
           <ul>
             <li>
               <label for="email">EMAIL</label>
-              <input type="email" id="email" name="email" />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="email@email.com"
+                required
+              />
             </li>
             <li>
               <label for="phone">PHONE NUMBER</label>
-              <input type="tel" id="phone" name="phone" />
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="(area code) XXX XXX XXX"
+                required
+              />
             </li>
           </ul>
-
           <ul>
             <li>
               <label for="password">PASSWORD</label>
-              <input type="password" name="password" id="password" />
+              <input type="password" name="password" id="password" required />
             </li>
             <li>
               <label for="confirm-password">CONFIRM PASSWORD</label>
@@ -55,13 +65,16 @@
                 type="password"
                 name="confirm-password"
                 id="confirm-password"
+                required
               />
             </li>
           </ul>
         </form>
       </div>
       <div class="create-account">
-        <button type="submit" id="create-account">Create Account</button>
+        <button type="submit" form="myform" id="create-account">
+          Create Account
+        </button>
         <div>Already have an account? <a href="./index.html">Log In</a></div>
       </div>
     </div>
