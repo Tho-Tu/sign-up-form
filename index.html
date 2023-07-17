@@ -83,7 +83,7 @@
                 minlength="8"
                 required
               />
-              <span id="passwordError"></span>
+              <span id="passwordError">&nbsp</span>
             </li>
           </ul>
         </form>
@@ -106,7 +106,7 @@
           passwordTwoInput.setCustomValidity("Passwords do not match");
           passwordTwoInput.classList.add("invalid-input");
         } else {
-          passwordError.textContent = "";
+          passwordError.textContent = "&nbsp";
           passwordTwoInput.setCustomValidity("");
           passwordTwoInput.classList.remove("invalid-input");
         }
